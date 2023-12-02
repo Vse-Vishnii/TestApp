@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestApp</name>
+    </assembly>
+    <members>
+        <member name="M:TestApp.Controllers.HomeController.Import(Microsoft.AspNetCore.Http.IFormFile,TestAppModels.Enums.ImportType)">
+            <summary>
+            Импорт данных
+            </summary>
+            <param name="data"></param>
+            <param name="type">Тип таблицы:
+            0 - Отдел,
+            1 - Сотрудник,
+            2 - Работа</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+    </members>
+</doc>
