@@ -58,7 +58,7 @@ namespace TestApp.Controllers
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
             
-            return Ok("sad");
+            return Ok("Success");
         }
     }
 }

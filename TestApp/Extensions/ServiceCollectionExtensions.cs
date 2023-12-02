@@ -42,9 +42,6 @@ namespace TestApp.Extensions
                     Title = "TestApp API",
                 });
                 options.ResolveConflictingActions(a => a.First());
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                options.IncludeXmlComments(xmlPath);
             });
 
             return services;
