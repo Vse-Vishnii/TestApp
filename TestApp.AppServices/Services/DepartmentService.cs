@@ -27,7 +27,7 @@ namespace TestApp.AppServices.Services
 
         public async Task Import(IFormFile data)
         {
-            var departments = await TsvHelper.ParseData(data, SetDepartment);
+            var departments = await TsvHelper.ParseData(data, SetDepartment, 4);
             var names = departments.Select(x => x.Name);
             var parentNames = departments.Select(x=>x.TsvParentName).Distinct();
             var dbDepartments = await _departmentRepository.GetByNameOrParent(names, parentNames);

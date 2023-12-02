@@ -26,7 +26,7 @@ namespace TestApp.AppServices.Services
 
         public async Task Import(IFormFile data)
         {
-            var employees = await TsvHelper.ParseData(data, SetEmployee);
+            var employees = await TsvHelper.ParseData(data, SetEmployee, 5);
             var names = employees.Select(x=>x.FullName);
             var dbEmployees = await _employeeRepository.GetByNames(names);
             var updateEmployees = dbEmployees

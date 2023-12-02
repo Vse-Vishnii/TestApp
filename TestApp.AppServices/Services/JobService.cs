@@ -23,7 +23,7 @@ namespace TestApp.AppServices.Services
 
         public async Task Import(IFormFile data)
         {
-            var jobs = await TsvHelper.ParseData(data, SetJob);
+            var jobs = await TsvHelper.ParseData(data, SetJob, 1);
             var names = jobs.Select(x => x.Name);
             var dbJobs = await _jobTitleRepository.GetByNames(names);
             var newJobs = jobs.ExceptBy(dbJobs.Select(x => x.Name), x => x.Name).ToList();
